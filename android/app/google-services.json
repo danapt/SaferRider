@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "252300130840",
+    "firebase_url": "https://saferrider-42086.firebaseio.com",
+    "project_id": "saferrider-42086",
+    "storage_bucket": "saferrider-42086.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:252300130840:android:866045284934345bebe16d",
+        "android_client_info": {
+          "package_name": "com.dev.saferrider"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "252300130840-tegfv39iunqlqv6qnuivsd5jdpk932aj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6mrFQx4ySnllXeA5m0Oz_Ud6CEuGBl54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "252300130840-tegfv39iunqlqv6qnuivsd5jdpk932aj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
