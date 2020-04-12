@@ -15,6 +15,7 @@ class GetRouteByMap {
     String endpoint = "&origin=$_origin&destination=$_destination&mode=$mode";
     String url = base_url_of_map + endpoint;
 //url = https://maps.googleapis.com/maps/api/directions/json?alternatives=true&key=AIzaSyC5SfKBN7YPJ323CJYBfSYnjBSbpiz9qCI
+    //AIzaSyA_YK1Dk-YYLpZJRo-AC-ckfd0lF8vjSwo
 //&origin=$_origin
 //&destination=$_destination
 //&mode=$mode

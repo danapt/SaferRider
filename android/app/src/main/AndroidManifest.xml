@@ -15,7 +15,7 @@
         android:label="saferrider"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyD6l0TnHDoE3rWa9hehaB6w5r-usaW8Zrw"/>
+            android:value="AIzaSyA_YK1Dk-YYLpZJRo-AC-ckfd0lF8vjSwo"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
