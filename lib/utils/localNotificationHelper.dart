@@ -29,9 +29,6 @@ class LocalNotificationHelper{
 
   //here we can request notification////
   Future setNotification(int id, String title, String body, int minutes)async{
-//    print("scheduled notificaition");
-//    DateTime scheduledNotificationDateTime = DateTime.now().add(Duration(seconds: 10));
-//    print(scheduledNotificationDateTime.toString());
 
   if(minutes != 1){
     minutes += 60*7;//7 hour
@@ -43,15 +40,5 @@ class LocalNotificationHelper{
           payload: 'item x');
 
     });
-//        await flutterLocalNotificationsPlugin.schedule(
-//        1,
-//        'scheduled title',
-//        'scheduled body',
-//        scheduledNotificationDateTime,
-//        platformChannelSpecifics,
-//        payload: "id",
-//        androidAllowWhileIdle: true);
-//        print("========================done=========================");
-//  }
 }
 }

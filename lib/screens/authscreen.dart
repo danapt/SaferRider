@@ -123,7 +123,7 @@ class _AuthCardState extends State<AuthCard> {
     );
   }
 
-  //firebase auth sign in+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  //firebase auth sign in
   Future<void> _submit() async {
     if (!_formKey.currentState.validate()) {
       // Invalid!

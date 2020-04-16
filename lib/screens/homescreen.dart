@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   bool _isShowAccidents = false;
   bool _isShowHazards = false;
-  //google map variables==============================================================
+  //google map variables
   GoogleMapController _controller;
   final Set<Marker> _markers = Set();
   final Set<Circle> _circles = Set();
@@ -48,12 +48,12 @@ class _HomeScreenState extends State<HomeScreen> {
     ],
   ];
 
-  //init position=============
+  //init position
   static final CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(53.350521, -6.260984),
     zoom: 11,
   );
-  //=====================================================================================
+  //
 
   @override
   void initState() {
@@ -75,13 +75,13 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Text("Home"),
           actions: <Widget>[
-            //sing out button........................................
+            //sing out button
            MenuWidget("home")
           ],
         ),
         body: Stack(
           children: <Widget>[
-            //google map screen--------------------------------------------------------------------------------
+            //google map screen
             Container(
               child: GoogleMap(
                   mapType: MapType.normal,
@@ -97,7 +97,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             //-------------------------------------------------------------------------------------------------
 
-            //select destination field and mylocation button----------------------------------------------
+            //select destination field and my_location button
             Container(
               padding: EdgeInsets.only(top: 10, left: 10, right: 10),
               width: MediaQuery.of(context).size.width,
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       children: <Widget>[
                         InkWell(
 
-                          //get Destination function by google place api2222222222222222222222222222222222222222
+                          //get Destination function by google place api2
                           onTap: _getOrigination,
                           child: Container(
                             child: TextField(
@@ -137,7 +137,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                         InkWell(
 
-                          //get Destination function by google place api2222222222222222222222222222222222222222
+                          //get Destination function by google place api2
                           onTap: _getDestination,
                           child: Container(
                             child: TextField(
@@ -173,7 +173,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Column(
                           children: <Widget>[
 
-                            //+++++++++++++++++++++ show/hide hazards button ++++++++++++++++++++++++++++++++++
+                            // show/hide hazards button
                             Container(
                               child: IconButton(
                                 onPressed: (){
@@ -193,7 +193,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 icon: Image.asset("assets/images/hazard.png", color: _isShowHazards?Colors.orange[700]:Colors.grey,),
                               ),
                             ),
-                            //+++++++++++++++++++++ show/hide accidents button ++++++++++++++++++++++++++++++++++
+                            //show/hide accidents button
                             Container(
                               child: IconButton(
                                 onPressed: (){
@@ -215,7 +215,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ),
 
-                      //select destination field and mylocation button----------------------------------------------
+                      //select destination field and my_location button
                       Container(
                         padding: EdgeInsets.only(right: 10, bottom: 20),
                         child:IconButton(icon: Icon(Icons.my_location, size: 40, color: Colors.grey[800],), onPressed: (){
@@ -248,9 +248,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
 
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      //draw route button-----------------------------------------------------------------------
+      //draw route button
       floatingActionButton: FloatingActionButton(onPressed: (){
-        //draw route function1111111111111111111111111111111111111111111111111111111
+        //draw route function1
         _drawRoute();
       },
         backgroundColor: Colors.white,
@@ -261,7 +261,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  //when loading google map, callback00000000000000000000000000000000000000000000000000000
+  //when loading google map, callback
   _onMapCreated(GoogleMapController controller){
     _controller = controller;
     //go to my location using camera.............
@@ -288,9 +288,9 @@ class _HomeScreenState extends State<HomeScreen> {
     allHazards = await getHazard();
   }
 
-  //++++++++++++++++++++++++++++++++++++++++++++++++Draw Safest Route+++++++++++++++++++++++++++++++++++++++++++++
+  //Draw Safest Route
 
-  //get Origination function by google place api2222222222222222222222222222222222222222
+  //get Origination function by google place api2
   _getOrigination()async{
     //"lib/utils/selectDestinationByGoogle"
     String origination = await SelectDestinationByGoogle(context);
@@ -321,7 +321,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 
-  //get Destination function by google place api2222222222222222222222222222222222222222
+  //get Destination function by google place api2
   _getDestination()async{
     _DestinationController.text = "";
     _polylines.clear();
@@ -380,19 +380,19 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 
-  //draw route function1111111111111111111111111111111111111111111111111111111
+  //draw route function1
   _drawRoute(){
     if(_DestinationController.text == ""){
       Toast.show("Plese select your Destination", context, gravity: Toast.CENTER);
       return;
     }
 
-    //get multi route points using google direction api.................................................
+    //get multi route points using google direction api
     _getPolylinesWithLocation();
   }
 
 
-  //get multi route points using google direction api.................................................
+  //get multi route points using google direction api
   Future _getPolylinesWithLocation() async {
     _circles.clear();
     _polylines.clear();
@@ -406,7 +406,7 @@ class _HomeScreenState extends State<HomeScreen> {
     List<Map<String, int>> dangerNumbers = [];
     int index = 0;
 
-    //put danger areas in google map............................................
+    //put danger areas in google map
     for(var oneRoute in _coordinates){
       int i = 0;
       for(var points in oneRoute){
@@ -444,21 +444,10 @@ class _HomeScreenState extends State<HomeScreen> {
       }
       _addPolyline(_coordinates[i], color, pattern);
     }
-//    int i=0;
-//    for(var item in _coordinates){
-//      print(item[0].longitude);
-//      int pattern = 1;
-//      Color color = Colors.red;
-//      if(i%2==0){
-//        color = Colors.green;
-//        pattern = 0;
-//      }
-//      _addPolyline(item, color, pattern);
-//      i++;
-//    }
+
   }
 
-  //pick accident markers==============================================
+  //pick accident markers
   _addAccidentMarkers(LatLng _position)async{
     int id = Random().nextInt(100000);
     _markers.add(Marker(
@@ -553,12 +542,12 @@ class _HomeScreenState extends State<HomeScreen> {
     }
 
     if(_isShowAccidents){
-      print("restore accidents================================================");
+      print("restore accidents");
       _showAccident();
     }
 
     if(_isShowHazards){
-      print("restore hazard================================================");
+      print("restore hazard");
       _showHazard();
     }
     setState(() {

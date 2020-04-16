@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
 }
 
 
-//splash screen--------------------------------------------------------------------------------------------
+//splash screen
 class Splash extends StatefulWidget {
   Splash({Key key, this.title}) : super(key: key);
   final String title;
@@ -70,10 +70,10 @@ class _SplashState extends State<Splash>  with SingleTickerProviderStateMixin{
     fadeAnimation = Tween(begin: 0.0, end: 1.0).animate(animationController);
     animationController.forward();
 
-    //splash loading timer function===============================================================
+    //splash loading timer function
     new Timer(new Duration(seconds: 1), ()async{
 
-      //get waether settings
+      //get weather settings
       weatherSettings = await getWeatherSettingsLocal();
       if(weatherSettings == null)
         weatherSettings = new WeatherSettings(
@@ -86,9 +86,9 @@ class _SplashState extends State<Splash>  with SingleTickerProviderStateMixin{
           storm: true,
           heavyRain: true,
         );
-      //get accidents data and save to variable+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      //get accidents data and save to variable
       await getAccidents();
-      //check login info from local++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      //check login info from local
       Auth.getUserLocal().then((user){
         if(user != null){
           current_user = user;
@@ -107,7 +107,7 @@ class _SplashState extends State<Splash>  with SingleTickerProviderStateMixin{
   }
 
 
-  //splash screen ==================================================================================
+  //splash screen
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(
@@ -175,4 +175,4 @@ class _SplashState extends State<Splash>  with SingleTickerProviderStateMixin{
     );
   }
 }
-//splashscreen-------------------------------------------------------------------------------------------------------
+//splashscreen

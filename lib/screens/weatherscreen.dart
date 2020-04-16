@@ -61,7 +61,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   ),),
 
                   SizedBox(height: 20,),
-                  //temperature setting-----------------------------------------
+                  //temperature setting
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.blue[700],
@@ -134,7 +134,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     ],
                   ),
 
-                  //wind speed setting-------------------------------------------
+                  //wind speed setting
                   SliderTheme(
                     data: SliderTheme.of(context).copyWith(
                       activeTrackColor: Colors.blue[700],
@@ -194,7 +194,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     ],
                   ),
 
-                  //wind direction setting---------------------------------------
+                  //wind direction setting
                   DoubleCircularSlider(
                     180,
                     20,

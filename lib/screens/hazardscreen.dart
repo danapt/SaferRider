@@ -22,7 +22,7 @@ class HazardScreen extends StatefulWidget {
 class _HazardScreenState extends State<HazardScreen> {
 
   bool _isDeletingHazard = false;
-  //google map variables==============================================================
+  //google map variables
   GoogleMapController _controller;
   final Set<Marker> _markers = Set();
   Marker _addHazardMarker;
@@ -33,12 +33,12 @@ class _HazardScreenState extends State<HazardScreen> {
 
   final _locationController = new TextEditingController();
 
-  //init position=============
+  //init position
   static final CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(51.5033, 0.1195),
     zoom: 100,
   );
-  //=====================================================================================
+  //
 
   bool _showHazard = false;
 
@@ -62,13 +62,13 @@ class _HazardScreenState extends State<HazardScreen> {
           title: Text("Hazard"),
           actions: <Widget>[
 
-            //sing out button........................................
+            //sing out button
            MenuWidget("hazard")
           ],
         ),
         body: Stack(
           children: <Widget>[
-            //google map screen--------------------------------------------------------------------------------
+            //google map screen
             Container(
               child: GoogleMap(
                   mapType: MapType.normal,
@@ -77,12 +77,12 @@ class _HazardScreenState extends State<HazardScreen> {
                   myLocationButtonEnabled: false,
                   markers: _markers,
                   onTap: _selectMapForHazard,
-                  //when loading google map, callback00000000000000000000000000000000000000000000000000000
+                  //when loading google map, callback
                   onMapCreated: _onMapCreated
               ),
             ),
             //-------------------------------------------------------------------------------------------------
-            //select destination field and mylocation button----------------------------------------------
+            //select destination field and my_location button
             SingleChildScrollView(
               child: Container(
                   padding: EdgeInsets.only(top: 10, left: 10, right: 10),
@@ -230,7 +230,7 @@ class _HazardScreenState extends State<HazardScreen> {
 
       _controller.animateCamera(CameraUpdate.newCameraPosition(CameraPosition(
           target: _originLocation == null ? LatLng(0, 0) : _originLocation, zoom: 17.0)));
-      //add self and destination marker++++++++++++++++++++++++++++++++++++++++++++++++
+      //add self and destination marker
       _selectedHazardId = "";
       _addHazardMarker = Marker(markerId: MarkerId("hazard"),
         position: _originLocation,

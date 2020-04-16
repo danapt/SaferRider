@@ -37,7 +37,9 @@ class GetRouteByMap {
   }
 
 
-//getting routes points from hashcode
+//getting routes points from hashcode code used from https://medium.com/@shubham.narkhede8/flutter-google-map-with-direction-6a26ad875083
+  //this apply for both methods _decodePoly and _convertToLatLng
+
   List _decodePoly(String poly) {
     var list = poly.codeUnits;
     var lList = new List();

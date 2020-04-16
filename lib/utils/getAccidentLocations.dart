@@ -3,7 +3,7 @@ import 'package:saferrider/global/global.dart';
 import 'package:saferrider/models/accident.dart';
 
 
-//checking accidents function++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//checking accidents function
 List<LatLng> getAccidentLocations(LatLng _routeLocation){
   List<LatLng> _list = [];
   List<Accident> _dataList = [];
@@ -15,7 +15,6 @@ List<LatLng> getAccidentLocations(LatLng _routeLocation){
   for(var item in allHazards){
     _dataList.add(new Accident(latitude: item.lat,longitude: item.lng));
   }
-  ////////////////////////////////////////////////
 
 
   //checking that the circle(center: _routeLocation, radius: 50) has accident or hazard points
@@ -25,10 +24,8 @@ List<LatLng> getAccidentLocations(LatLng _routeLocation){
       _list.add(new LatLng(item.latitude, item.longitude));
     }
   }
-  /////////////////////////////////////////////////////////////////////////////////////////////
 
   //return checked accident and hazard points
   return _list;
-  ////////////////////////////////////////////
 }
 

@@ -132,41 +132,5 @@ class Auth {
     }
   }
 
-/*static Stream<User> getUserFirestore(String user_id) {
-    print("...getUserFirestore...");
-    if (user_id != null) {
-      //try firestore
-      return Firestore.instance
-          .collection("users")
-          .where("user_id", isEqualTo: user_id)
-          .snapshots()
-          .map((QuerySnapshot snapshot) {
-        return snapshot.documents.map((doc) {
-          return User.fromDocument(doc);
-        }).first;
-      });
-    } else {
-      print('firestore user not found');
-      return null;
-    }
-  }*/
 
-/*static Stream<Settings> getSettingsFirestore(String settingsId) {
-    print("...getSettingsFirestore...");
-    if (settingsId != null) {
-      //try firestore
-      return Firestore.instance
-          .collection("settings")
-          .where("settingsId", isEqualTo: settingsId)
-          .snapshots()
-          .map((QuerySnapshot snapshot) {
-        return snapshot.documents.map((doc) {
-          return Settings.fromDocument(doc);
-        }).first;
-      });
-    } else {
-      print('no firestore settings available');
-      return null;
-    }
-  }*/
 }
